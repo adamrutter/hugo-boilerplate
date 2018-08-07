@@ -2,7 +2,13 @@
 
 Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
 
+#### What it does
 
+Sass source code is compiled and minified to `static/css` and run through `autoprefixer`.
+
+JavaScript source code is transpiled using `babel`, minified using `uglify-js` and outputted to `static/js`.
+
+HTML is minified after build using `html-minifer`.
 
 ## Installation
 
@@ -22,6 +28,8 @@ It starts the Hugo live server, and compiles source code to `static` upon any ch
 
 Use this to build the website. It cleans the `public` directory, compiles all source code, calls `hugo` to build the website and finally minifies the resulting HTML.
 
+
+## Other information
 
 ### Multiple content sections
 
