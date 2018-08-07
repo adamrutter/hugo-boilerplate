@@ -8,7 +8,7 @@ Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Post
 2. `cd hugo-boilerplate`
 3. `npm install`
 
-## Multiple content sections
+### Multiple content sections
 
 Homepages often use multiple sections of content.
 
