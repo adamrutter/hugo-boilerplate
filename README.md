@@ -1,5 +1,7 @@
 # Hugo Boilerplate
 
+Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
+
 ## Multiple content sections
 
 Homepages often use multiple sections of content.
