@@ -1,0 +1,42 @@
+{
+  "name": "hugo-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for use with Hugo",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.2.0",
+    "eslint-config-google": "^0.9.1",
+    "html-minifier": "^3.5.19",
+    "node-sass": "^4.9.2",
+    "onchange": "^4.1.0",
+    "parallelshell": "^3.0.2",
+    "postcss-cli": "^6.0.0",
+    "stylelint": "^9.4.0",
+    "stylelint-config-standard": "^18.2.0",
+    "uglify-js": "^3.4.6"
+  },
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o static/css src/scss",
+    "autoprefixer": "postcss --no-map -u autoprefixer -r static/css/*",
+    "clean:public": "rm -rf public",
+    "clean:css": "rm -rf static/css/*",
+    "clean:js": "rm -rf static/js/*",
+    "clean:all": "npm run clean:public && npm run clean:css && npm run clean:js",
+    "build:html": "html-minifier --input-dir ./public --output-dir ./public --collapse-whitespace --file-ext html",
+    "build:css": "npm run clean:css && npm run scss && npm run autoprefixer",
+    "build:js": "npm run clean:js && ./node_modules/.bin/babel src/js/ | uglifyjs -m -o static/js/main.js",
+    "watch:scss": "onchange 'src/scss/**' -- npm run build:css",
+    "watch:js": "onchange 'src/js/**'  -- npm run build:js",
+    "watch:src": "parallelshell 'npm run watch:scss' 'npm run watch:js'",
+    "build": "npm run clean:public && npm run build:css && npm run build:js && hugo && npm run build:html",
+    "start": "parallelshell 'hugo server' 'npm run watch:src'"
+  },
+  "author": "Adam Rutter",
+  "license": "GPL-3.0"
+}

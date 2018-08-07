@@ -1,0 +1,16 @@
+{{ define "body" }}
+
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <main>
+    <p>Placeholder single page template.</p>
+    {{ .Content }}
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+{{ end }}

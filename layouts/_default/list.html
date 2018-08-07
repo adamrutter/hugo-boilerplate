@@ -1,0 +1,20 @@
+{{ define "body" }}
+
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <main>
+    <p>Placeholder list page template.</p>
+    <ul>
+      {{ range .Pages }}
+      <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "body" }}
+{{ $section := (.Site.GetPage "/homepage-sections").Resources.Match "section*" }}
+
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <main>
+    <p>{{ (index $section 00).Content }}</p>
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+{{ end }}
