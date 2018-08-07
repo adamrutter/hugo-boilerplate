@@ -31,6 +31,38 @@ Use this to build the website.
 3. Build the website with `hugo`
 4. Minifies the resulting `html` files.
 
+## Structure
+
+```
+├── archetypes                // For storing archetypes
+│   ├── default.md            // The default archetype
+│   └── homepage-content.md   // An archetype for homepage content
+├── content                   // For storing content
+│   ├── homepage-sections     // For storing homepage content sections
+│   │   ├── index.md          // Signifies the headless bundle
+│   │   └── section-00.md     // A section of content
+│   └── _index.md             // Main homepage .md file; use for front matter
+├── layouts                   // For layouts
+│   ├── _default              // For default layouts
+│   │   ├── baseof.html       // Containing everything up to the <body> tag
+│   │   ├── list.html         // Default list page
+│   │   └── single.html       // Default single page
+│   ├── index.html            // Homepage template
+│   └── partials              // For partial templates
+│       ├── footer.html       // The footer
+│       └── header.html       // The header
+├── src                       // For source code
+│   ├── js                    // For JavaScript source code
+│   │   └── main.js           // Main JavaScript file
+│   └── scss                  // For Sass source code
+│       ├── components        // For components; header, footer etc
+│       ├── layouts           // For layouts; grids etc
+│       ├── pages             // For page specific CSS
+│       ├── variables         // For Sass variables
+│       └── main.scss         // The main .scss file; imports normalize
+└── static                    // For static assets; images etc.
+```
+
 ## Build Process
 
 ### Sass
