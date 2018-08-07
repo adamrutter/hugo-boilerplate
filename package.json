@@ -38,5 +38,6 @@
     "start": "parallelshell 'hugo server' 'npm run watch:src'"
   },
   "author": "Adam Rutter",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "repository": "https://gitlab.com/adamrutter/hugo-boilerplate"
 }
