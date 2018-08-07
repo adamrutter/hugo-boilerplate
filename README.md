@@ -8,6 +8,19 @@ Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Post
 2. `cd hugo-boilerplate`
 3. `npm install`
 
+## Usage
+
+#### `npm start`
+
+Use this for development. Changes made to any files will be immediately reflected on [http://localhost:1313](http://localhost:1313).
+
+It starts the Hugo live server, and compiles source code to `static` upon any changes in `src/scss` and `src/js`. 
+
+#### `npm run build`
+
+Use this to build the website. It cleans the `public` directory, compiles all source code, calls `hugo` to build the website and finally minifies the resultilng HTML.
+
+
 ### Multiple content sections
 
 Homepages often use multiple sections of content.
