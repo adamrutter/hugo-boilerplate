@@ -41,7 +41,7 @@ Use this to build the website.
 ### JavaScript
 1. `static/js` is cleaned.
 2. All `.js` are transpiled to ES5 and piped to `uglify-js`.
-3. `uglify-js` minifies and mangles the code, and outputs to `static/js/main.js`
+3. `uglify-js` minifies and mangles the code, and outputs to `static/js/main.js`.
 
 ### HTML
 1. `hugo` generates the `.html` files.
@@ -51,14 +51,24 @@ Use this to build the website.
 
 ### Multiple content sections
 
-Homepages often use multiple sections of content.
+Homepages often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:
 
-This content can be stored in the headless leaf bundle `content/homepage-sections` as `section-nn.md` (where `nn` is the zero-indexed number of the section) and be referenced in the homepage template using `{{ (index $section nn).Content }}`. You could also use `range` to loop through the variable.
+* A headless leaf bundle `content/homepage-sections` for storing these sections.
+* A pre-written `.GetPage` method in the homepage template to fetch them.
+* A custom archetype.
 
-Use `hugo new homepage-sections/section-nn` when creating these sections (to use the custom archetype) or make sure to include only a `title` field in the front matter to ensure the correct ordering of the sections.
+##### How to use:
 
-This system can be extended to other pages too.
+1. Create a section with `hugo new homepage-section/section-nn` (where `nn` is the zero-indexed number of the section).
+2. Reference these sections in the homepage template using `{{ (index $section nn).Content }}`.
 
-Create another headless leaf bundle `content/my-sections` to store your content sections and include `{{ $section := (.Site.GetPage "/my-sections").Resources.Match "section*" }}` in the page's template to reference them with `{{ (index $section nn).Content }}`.
+*__Note__: the front matter of these sections must only contain `title` to ensure correct sorting; hence the custom archetype.*
 
-Again, make sure the front matter only contains a title, either using a custom archetype or by hand.
+##### This system can be extended to other pages too:
+
+1. Create another headless leaf bundle `content/my-sections`.
+2. Include `{{ $section := (.Site.GetPage "/my-sections").Resources.Match "section*" }}` in the page's template.
+3. Name your sections `section-nn`. 
+4. Reference the sections with `{{ (index $section nn).Content }}`.
+
+Again, the front matter should only contain a title; either use a custom archetype or ensure by hand.
