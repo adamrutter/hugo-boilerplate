@@ -1,3 +1,5 @@
+# Hugo Boilerplate
+
 ## Multiple content sections
 
 Homepages often use multiple sections of content.
