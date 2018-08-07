@@ -1,6 +1,6 @@
 # Hugo Boilerplate
 
-Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
+Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS"), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
 
 #### What it does
 
@@ -22,7 +22,7 @@ HTML is minified after build using `html-minifer`.
 
 Use this for development. Changes made to any files will be immediately reflected on [http://localhost:1313](http://localhost:1313).
 
-It starts the Hugo live server, and compiles source code to `static` upon any changes in `src/scss` and `src/js`. 
+It starts the Hugo live server, and compiles source code to `static` upon any changes in `src/scss` and `src/js`.
 
 ### `npm run build`
 
