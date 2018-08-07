@@ -2,6 +2,8 @@
 
 Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
 
+
+
 ## Installation
 
 1. `git clone https://gitlab.com/adamrutter/hugo-boilerplate.git`
@@ -10,15 +12,15 @@ Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Post
 
 ## Usage
 
-#### `npm start`
+### `npm start`
 
 Use this for development. Changes made to any files will be immediately reflected on [http://localhost:1313](http://localhost:1313).
 
 It starts the Hugo live server, and compiles source code to `static` upon any changes in `src/scss` and `src/js`. 
 
-#### `npm run build`
+### `npm run build`
 
-Use this to build the website. It cleans the `public` directory, compiles all source code, calls `hugo` to build the website and finally minifies the resultilng HTML.
+Use this to build the website. It cleans the `public` directory, compiles all source code, calls `hugo` to build the website and finally minifies the resulting HTML.
 
 
 ### Multiple content sections
