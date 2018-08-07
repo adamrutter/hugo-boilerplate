@@ -1,6 +1,6 @@
 # Hugo Boilerplate
 
-Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS"), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
+Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Normalize](necolas.github.io/normalize.css "Normalize"), [PostCSS](postcss.org "PostCSS"), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
 
 ## Installation
 
