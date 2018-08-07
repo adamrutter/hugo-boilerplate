@@ -14,11 +14,22 @@ Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Post
 
 Use this for development. Changes made to any files will be immediately reflected on [http://localhost:1313](http://localhost:1313).
 
-It starts the Hugo live server, and compiles source code to `static` upon any changes in `src/scss` and `src/js`.
+##### What it does:
+
+1. Starts the Hugo live server.
+2. Compiles/minifies Sass to `static/css` upon changes in `src/scss`.
+3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
 
 ### `npm run build`
 
-Use this to build the website. It cleans the `public` directory, compiles all source code, calls `hugo` to build the website and finally minifies the resulting HTML.
+Use this to build the website.
+
+##### What it does: 
+
+1. Cleans the `public` directory.
+2. Builds all source code. See [Build Process](#build-process "Build Process") for more details.
+3. Build the website with `hugo`
+4. Minifies the resulting `html` files.
 
 ## Build Process
 
