@@ -2,6 +2,12 @@
 
 Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [PostCSS](postcss.org "PostCSS), [Babel](babeljs.io "Babel") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
 
+## Installation
+
+1. `git clone https://gitlab.com/adamrutter/hugo-boilerplate.git`
+2. `cd hugo-boilerplate`
+3. `npm install`
+
 ## Multiple content sections
 
 Homepages often use multiple sections of content.
