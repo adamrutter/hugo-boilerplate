@@ -22,6 +22,11 @@
     "uglify-js": "^3.4.6"
   },
   "scripts": {
+    "stylelint": "stylelint src/**/*.scss",
+    "stylelint:fix": "stylelint src/**/*.scss --fix",
+    "eslint" : "eslint src/**/*.js",
+    "eslint:fix" : "eslint src/**/*.js --fix",
+    "lint:all": "npm run stylelint --silent; npm run eslint --silent",
     "scss": "node-sass --output-style compressed -o static/css src/scss",
     "autoprefixer": "postcss --no-map -u autoprefixer -r static/css/*",
     "clean:public": "rm -rf public",
