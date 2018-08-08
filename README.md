@@ -24,11 +24,32 @@ Use this for development. Changes made to any files will be immediately reflecte
 
 Use this to build the website.
 
-##### What it does: 
+##### What it does:
 
 1. Cleans the `public` directory.
 2. Builds all source code. See [Build Process](#build-process "Build Process") for more details.
-3. Build the website with `hugo`
+3. Build the website with `hugo`.
+4. Minifies the resulting `html` files.
+
+### `npm run start:preview`
+
+Similar to `npm start`. Use this when you want the live server to include drafts and future content during development.
+
+##### What it does:
+
+1. Starts the Hugo live server with the flags `--buildFuture --buildDrafts`.
+2. Compiles/minifies Sass to `static/css` upon changes in `src/scss`.
+3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.|
+
+### `npm run build:preview`
+
+Similar to `npm run build`. Use this to include drafts and future content in your build.
+
+##### What it does:
+
+1. Cleans the `public` directory.
+2. Builds all source code. See [Build Process](#build-process "Build Process") for more details.
+3. Build the website with `hugo --buildFuture --buildDrafts`.
 4. Minifies the resulting `html` files.
 
 ## Structure
@@ -100,7 +121,7 @@ Homepages often use multiple sections of content and the boilerplate attempts to
 
 1. Create another headless leaf bundle `content/my-sections`.
 2. Include `{{ $section := (.Site.GetPage "/my-sections").Resources.Match "section*" }}` in the page's template.
-3. Name your sections `section-nn`. 
+3. Name your sections `section-nn`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
 
 Again, the front matter should only contain a title; either use a custom archetype or ensure by hand.
