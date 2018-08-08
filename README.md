@@ -58,8 +58,8 @@ Use this to lint your source code.
 
 ##### What it does:
 
-1. Lints your `.scss` source code with stylelint, using `stylelint-config-standard`.
-2. Lints your `.js` source code with ESLint, using `eslint-config-google`.
+1. Lints all `.scss` code in `src` with stylelint, using `stylelint-config-standard`.
+2. Lints all `.js` code in `src` with ESLint, using `eslint-config-google`.
 
 ## Structure
 
