@@ -120,22 +120,22 @@ Use this to lint your source code.
 
 Homepages often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:
 
-* A headless bundle `content/homepage-sections` for storing these sections.
+* A headless bundle `content/sections/home` for storing these sections.
 * A pre-written `.GetPage` method in the homepage template to fetch them.
 * A custom archetype.
 
 ##### How to use:
 
-1. Create a section with `hugo new homepage-section/section-nn` (where `nn` is the zero-indexed number of the section).
+1. Create a section with `hugo new sections/home/section-nn.md` (where `nn` is the zero-indexed number of the section).
 2. Reference these sections in the homepage template using `{{ (index $section nn).Content }}`.
 
 *__Note__: the front matter of these sections must only contain `title` to ensure correct sorting; hence the custom archetype.*
 
 ##### This system can be extended to other pages too:
 
-1. Create another headless bundle `content/my-sections`.
-2. Include `{{ $section := (.Site.GetPage "/my-sections").Resources.Match "section*" }}` in the page's template.
-3. Name your sections `section-nn`.
+1. Create another headless bundle `content/sections/my-page`.
+2. Include `{{ $section := (.Site.GetPage "/sections/my-page").Resources.Match "section*" }}` in the page's template.
+3. Name your sections `section-nn.md`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
 
 Again, the front matter should only contain a title; either use a custom archetype or ensure by hand.
