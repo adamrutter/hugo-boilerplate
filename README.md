@@ -77,6 +77,7 @@ Use this to lint your source code.
 │   │   ├── baseof.html       // Containing everything up to the <body> tag
 │   │   ├── list.html         // Default list page
 │   │   └── single.html       // Default single page
+│   ├── 404.html              // 404 template
 │   ├── index.html            // Homepage template
 │   └── partials              // For partial templates
 │       ├── footer.html       // The footer
