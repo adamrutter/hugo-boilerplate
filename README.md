@@ -64,47 +64,57 @@ Use this to lint your source code.
 ## Structure
 
 ```
-├── archetypes                // For storing archetypes
-│   ├── default.md            // The default archetype
-│   └── sections.md           // An archetype for homepage content
+├── archetypes                 - For storing archetypes
+│   ├── default.md             - The default archetype
+│   └── sections.md            - An archetype for homepage content
 │
-├── content                   // For storing content
-│   ├── _index.md             // Main homepage .md file; use for front matter
-│   ├── page-1.md             // A default page
-│   ├── sections              // The content sections directory
-│   │   └── home              // For storing homepage content sections
-│   │       ├── index.md      // Signifies the headless bundle
-│   │       └── section-00.md // A section of content
-│   └── sub-directory         // A sub-directory
-│       ├── _index.html       // Front matter/content for the directory list page
-│       └── page-2.md         // A default page
+├── content                    - For storing content
+│   ├── _index.md              - Main homepage .md file; use for front matter
+│   ├── page-1.md              - A default page
+│   │
+│   ├── sections               - The content sections directory
+│   │   │
+│   │   └── home               - For storing homepage content sections
+│   │       ├── index.md       - Signifies the headless bundle
+│   │       └── section-00.md  - A section of content
+│   │
+│   └── sub-directory          - A sub-directory
+│       ├── _index.html        - Front matter/content for the directory list page
+│       └── page-2.md          - A default page
 │
-├── layouts                   // For layouts
-│   ├── _default              // For default layouts
-│   │   ├── baseof.html       // Containing everything up to the <body> tag
-│   │   ├── list.html         // Default list page
-│   │   └── single.html       // Default single page
-│   ├── 404.html              // 404 template
-│   ├── index.html            // Homepage template
-│   ├── page                  // For top level page templates
-│   │   └── page-1.html       // A template example for page-1.md
-│   ├── partials              // For partial templates
-│   │   ├── footer.html       // The footer
-│   │   └── header.html       // The header
-│   └── sub-directory         // Templates for content of the sub-directory type
-│       └── single.html       // Single page template for sub-directory
+├── layouts                    - For layouts
+│   ├── 404.html               - 404 template
+│   ├── index.html             - Homepage template
+│   │
+│   ├── _default               - For default layouts
+│   │   ├── baseof.html        - Containing everything up to the <body> tag
+│   │   ├── list.html          - Default list page
+│   │   └── single.html        - Default single page
+│   │
+│   ├── page                   - For top level page templates
+│   │   └── page-1.html        - A template example for page-1.md
+│   │
+│   ├── partials               - For partial templates
+│   │   ├── footer.html        - The footer
+│   │   └── header.html        - The header
+│   │
+│   └── sub-directory          - Templates for content of the sub-directory type
+│       └── single.html        - Single page template for sub-directory
 │
-├── src                       // For source code
-│   ├── js                    // For JavaScript source code
-│   │   └── main.js           // Main JavaScript file
-│   └── scss                  // For Sass source code
-│       ├── components        // For components; header, footer etc
-│       ├── layouts           // For layouts; grids etc
-│       ├── pages             // For page specific CSS
-│       ├── variables         // For Sass variables
-│       └── main.scss         // The main .scss file; imports normalize
+├── src                        - For source code
 │
-└── static                    // For static assets; images etc.
+│   ├── js                     - For JavaScript source code
+│   │   └── main.js            - Main JavaScript file
+│   │
+│   └── scss                   - For Sass source code
+│       ├── main.scss          - The main .scss file; imports normalize
+│       │
+│       ├── layouts            - For layouts; grids etc
+│       ├── pages              - For page specific CSS
+│       ├── variables          - For Sass variables
+│       └── components         - For components; header, footer etc
+│
+└── static                     - For static assets; images etc.
 ```
 
 ## Build Process
