@@ -66,16 +66,17 @@ Use this to lint your source code.
 ```
 ├── archetypes                // For storing archetypes
 │   ├── default.md            // The default archetype
-│   └── homepage-content.md   // An archetype for homepage content
+│   └──sections.md            // An archetype for homepage content
 ├── content                   // For storing content
-│   ├── homepage-sections     // For storing homepage content sections
-│   │   ├── index.md          // Signifies the headless bundle
-│   │   └── section-00.md     // A section of content
 │   ├── _index.md             // Main homepage .md file; use for front matter
-│   ├── page-1.md             // A default page
-│   └── sub-directory         // A sub-directory
-│       ├── _index.html       // Front matter/content for the directory list page
-│       └── page-2.md         // A default page
+│   ├── page-1.md             // A default page
+│   ├── sections              // The content sections directory
+│   │   └── home              // For storing homepage content sections
+│   │       ├── index.md      // Signifies the headless bundle
+│   │       └── section-00.md // A section of content
+│   └── sub-directory         // A sub-directory
+│       ├── _index.html       // Front matter/content for the directory list page
+│       └── page-2.md         // A default page
 ├── layouts                   // For layouts
 │   ├── _default              // For default layouts
 │   │   ├── baseof.html       // Containing everything up to the <body> tag
@@ -83,9 +84,13 @@ Use this to lint your source code.
 │   │   └── single.html       // Default single page
 │   ├── 404.html              // 404 template
 │   ├── index.html            // Homepage template
-│   └── partials              // For partial templates
-│       ├── footer.html       // The footer
-│       └── header.html       // The header
+│   ├── page                  // For top level page templates
+│   │   └── page-1.html       // A template example for page-1.md
+│   ├── partials              // For partial templates
+│   │   ├── footer.html       // The footer
+│   │   └── header.html       // The header
+│   └── sub-directory         // Templates for content of the sub-directory type
+│       └── single.html       // Single page template for sub-directory
 ├── src                       // For source code
 │   ├── js                    // For JavaScript source code
 │   │   └── main.js           // Main JavaScript file
@@ -142,7 +147,7 @@ For example, to use a custom layout for `content/sub-directory/page-2.md`:
 
 *__Note__: The content type must still match*
 
-###### Top-level pages
+##### Top-level pages
 
 As pages at the top-level of the `content` directory (eg. `content/page-1.md`) have a `type` of `pages`, their layouts go in `layouts/pages`.
 
