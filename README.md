@@ -1,6 +1,13 @@
 # Hugo Boilerplate
 
-Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Normalize](necolas.github.io/normalize.css "Normalize"), [PostCSS](postcss.org "PostCSS"), [Babel](babeljs.io "Babel"), [stylelint](stylelint.io "stylelint"), [ESLint](eslint.org "ESLint") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
+The boilerplate I use for creating [Hugo](gohugo.io "Hugo") projects. It uses:
+* [Sass](sass-lang.com "Sass")
+* [Normalize](necolas.github.io/normalize.css "Normalize")
+* [PostCSS](postcss.org "PostCSS")
+* [Babel](babeljs.io "Babel")
+* [stylelint](stylelint.io "stylelint")
+* [ESLint](eslint.org "ESLint")
+* [npm scripts](docs.npmjs.com/misc/scripts "npm scripts")
 
 ## Installation
 
@@ -61,6 +68,22 @@ Use this to lint your source code.
 1. Lints all `.scss` code in `src` with stylelint, using `stylelint-config-standard`.
 2. Lints all `.js` code in `src` with ESLint, using `eslint-config-google`.
 
+## Build Process
+
+### Sass
+1. `static/css` is cleaned.
+2. All `.scss` files are compiled to `.css` using `node-sass`, compressed and outputted to `static/css`.
+3. The compiled `.css` files are run through `postcss -u autoprefixer` with source maps disabled.
+
+### JavaScript
+1. `static/js` is cleaned.
+2. All `.js` are transpiled to ES5 and piped to `uglify-js`.
+3. `uglify-js` minifies and mangles the code, and outputs to `static/js/main.js`.
+
+### HTML
+1. `hugo` generates the `.html` files.
+2. All `.html` files are minified using `html-minifier`.
+
 ## Structure
 
 ```
@@ -116,22 +139,6 @@ Use this to lint your source code.
 │
 └── static                     - For static assets; images etc.
 ```
-
-## Build Process
-
-### Sass
-1. `static/css` is cleaned.
-2. All `.scss` files are compiled to `.css` using `node-sass`, compressed and outputted to `static/css`.
-3. The compiled `.css` files are run through `postcss -u autoprefixer` with source maps disabled.
-
-### JavaScript
-1. `static/js` is cleaned.
-2. All `.js` are transpiled to ES5 and piped to `uglify-js`.
-3. `uglify-js` minifies and mangles the code, and outputs to `static/js/main.js`.
-
-### HTML
-1. `hugo` generates the `.html` files.
-2. All `.html` files are minified using `html-minifier`.
 
 ## Other information
 
