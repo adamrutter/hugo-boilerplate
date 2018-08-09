@@ -66,7 +66,8 @@ Use this to lint your source code.
 ```
 ├── archetypes                // For storing archetypes
 │   ├── default.md            // The default archetype
-│   └──sections.md            // An archetype for homepage content
+│   └── sections.md           // An archetype for homepage content
+│
 ├── content                   // For storing content
 │   ├── _index.md             // Main homepage .md file; use for front matter
 │   ├── page-1.md             // A default page
@@ -77,6 +78,7 @@ Use this to lint your source code.
 │   └── sub-directory         // A sub-directory
 │       ├── _index.html       // Front matter/content for the directory list page
 │       └── page-2.md         // A default page
+│
 ├── layouts                   // For layouts
 │   ├── _default              // For default layouts
 │   │   ├── baseof.html       // Containing everything up to the <body> tag
@@ -91,6 +93,7 @@ Use this to lint your source code.
 │   │   └── header.html       // The header
 │   └── sub-directory         // Templates for content of the sub-directory type
 │       └── single.html       // Single page template for sub-directory
+│
 ├── src                       // For source code
 │   ├── js                    // For JavaScript source code
 │   │   └── main.js           // Main JavaScript file
@@ -100,6 +103,7 @@ Use this to lint your source code.
 │       ├── pages             // For page specific CSS
 │       ├── variables         // For Sass variables
 │       └── main.scss         // The main .scss file; imports normalize
+│
 └── static                    // For static assets; images etc.
 ```
 
