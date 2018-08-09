@@ -116,6 +116,38 @@ Use this to lint your source code.
 
 ## Other information
 
+### Custom Templates
+
+Pages use templates based on their __content type__. This means you can override the default layouts (the ones in `layouts/_default`), if you have defined a custom layout for the page's content type.
+
+Content type is set using the front matter variable `type`. If the variable is not set, it defaults to the page's parent directory within `content`.
+
+##### Single/List Templates
+
+To use custom layouts for pages in `content/sub-directory`, you need one or both of:
+
+* `content/sub-directory/single.html`
+* `content/sub-directory/list.html`
+
+Pages within `sub-directory` will now use these layouts by default.
+
+##### Individual Templates
+
+Custom layouts for specific, individual pages follow the same structure. However, the layout must be specified in the front matter.
+
+For example, to use a custom layout for `content/sub-directory/page-2.md`:
+
+1. Create your layout in `content/sub-directory/page-2.html`.
+2. Specify `layout: "page-2"` in the front matter of `page-2.md`.
+
+*__Note__: The content type must still match*
+
+###### Top-level pages
+
+As pages at the top-level of the `content` directory (eg. `content/page-1.md`) have a `type` of `pages`, their layouts go in `layouts/pages`.
+
+You could also set a custom `type`.
+
 ### Multiple content sections
 
 Homepages often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:

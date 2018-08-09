@@ -1,0 +1,17 @@
+{{ define "body" }}
+
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <main>
+    <h2>Custom single page template for sub-directory</h2>
+    <h3>{{ .Title }}</h3>
+    {{ .Content }}
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+{{ end }}
