@@ -66,7 +66,7 @@ Use this to lint your source code.
 ```
 ├── archetypes                 - For storing archetypes
 │   ├── default.md             - The default archetype
-│   └── sections.md            - An archetype for homepage content
+│   └── sections.md            - An archetype for sections of content, see below
 │
 ├── content                    - For storing content
 │   ├── _index.md              - Main homepage .md file; use for front matter
