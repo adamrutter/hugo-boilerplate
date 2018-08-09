@@ -1,6 +1,6 @@
 # Hugo Boilerplate
 
-Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Normalize](necolas.github.io/normalize.css "Normalize"), [PostCSS](postcss.org "PostCSS"), [Babel](babeljs.io "Babel"), [stylelint](stylelint.io "stylelint\"), [ESLint](eslint.org "ESLint") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
+Boilerplate for creating Hugo projects using [Sass](sass-lang.com "Sass"), [Normalize](necolas.github.io/normalize.css "Normalize"), [PostCSS](postcss.org "PostCSS"), [Babel](babeljs.io "Babel"), [stylelint](stylelint.io "stylelint"), [ESLint](eslint.org "ESLint") and [npm scripts](docs.npmjs.com/misc/scripts "npm scripts").
 
 ## Installation
 
@@ -28,7 +28,7 @@ Use this to build the website.
 
 1. Cleans the `public` directory.
 2. Builds all source code. See [Build Process](#build-process "Build Process") for more details.
-3. Build the website with `hugo`.
+3. Builds the website with `hugo`.
 4. Minifies the resulting `html` files.
 
 ### `npm run start:preview`
@@ -49,7 +49,7 @@ Similar to `npm run build`. Use this to include drafts and future content in you
 
 1. Cleans the `public` directory.
 2. Builds all source code. See [Build Process](#build-process "Build Process") for more details.
-3. Build the website with `hugo --buildFuture --buildDrafts`.
+3. Builds the website with `hugo --buildFuture --buildDrafts`.
 4. Minifies the resulting `html` files.
 
 ### `npm run lint:all`
