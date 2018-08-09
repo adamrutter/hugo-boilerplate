@@ -5,7 +5,9 @@
   </header>
 
   <main>
-    <p>Placeholder list page template.</p>
+    <h2>Placeholder list page template.</h2>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Content }}</p>
     <ul>
       {{ range .Pages }}
       <li><a href="{{ .URL }}">{{ .Title }}</a></li>

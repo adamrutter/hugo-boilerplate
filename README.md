@@ -71,7 +71,11 @@ Use this to lint your source code.
 │   ├── homepage-sections     // For storing homepage content sections
 │   │   ├── index.md          // Signifies the headless bundle
 │   │   └── section-00.md     // A section of content
-│   └── _index.md             // Main homepage .md file; use for front matter
+│   ├── _index.md             // Main homepage .md file; use for front matter
+│   ├── page-1.md             // A default page
+│   └── sub-directory         // A sub-directory
+│       ├── _index.html       // Front matter/content for the directory list page
+│       └── page-2.md         // A default page
 ├── layouts                   // For layouts
 │   ├── _default              // For default layouts
 │   │   ├── baseof.html       // Containing everything up to the <body> tag
