@@ -1,4 +1,4 @@
 baseURL = "http://example.org/"
 languageCode = "en-gb"
-title = "My Hugo Website Title"
+title = "My New Hugo Website"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]

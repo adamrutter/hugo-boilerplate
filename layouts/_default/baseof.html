@@ -6,7 +6,7 @@
     <meta name="description" content="{{ block "description" . }}{{ .Params.Description }}{{ end }}">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/css/main.css">
-    <title>My New Hugo Website | {{ block "title" . }}{{ .Title }}{{ end }}</title>
+    <title>{{ .Site.Title }} | {{ block "title" . }}{{ .Title }}{{ end }}</title>
   </head>
   <body>
     <div class="container {{ urlize .Title }}">
