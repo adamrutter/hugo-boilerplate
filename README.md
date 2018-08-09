@@ -120,7 +120,7 @@ Use this to lint your source code.
 
 Homepages often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:
 
-* A headless leaf bundle `content/homepage-sections` for storing these sections.
+* A headless bundle `content/homepage-sections` for storing these sections.
 * A pre-written `.GetPage` method in the homepage template to fetch them.
 * A custom archetype.
 
@@ -133,7 +133,7 @@ Homepages often use multiple sections of content and the boilerplate attempts to
 
 ##### This system can be extended to other pages too:
 
-1. Create another headless leaf bundle `content/my-sections`.
+1. Create another headless bundle `content/my-sections`.
 2. Include `{{ $section := (.Site.GetPage "/my-sections").Resources.Match "section*" }}` in the page's template.
 3. Name your sections `section-nn`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
