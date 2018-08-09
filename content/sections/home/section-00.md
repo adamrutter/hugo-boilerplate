@@ -2,4 +2,4 @@
 title: "Section 00"
 ---
 
-This is a homepage content section template.
+This is a homepage content section.
