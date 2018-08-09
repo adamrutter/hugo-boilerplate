@@ -135,7 +135,7 @@ Homepages often use multiple sections of content and the boilerplate attempts to
 
 1. Create another headless bundle `content/sections/my-page`.
 2. Include `{{ $section := (.Site.GetPage "/sections/my-page").Resources.Match "section*" }}` in the page's template.
-3. Name your sections `section-nn.md`.
+3. `hugo new /sections/my-page/section-nn.md`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
 
-Again, the front matter should only contain a title; either use a custom archetype or ensure by hand.
+Again, the front matter should only contain a title; using `hugo new` ensures this.
