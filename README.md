@@ -197,3 +197,12 @@ Homepages often use multiple sections of content and the boilerplate attempts to
 4. Reference the sections with `{{ (index $section nn).Content }}`.
 
 Again, the front matter should only contain a title; using `hugo new` ensures this.
+
+### Menus
+
+Two menus are included:
+
+* Header
+* Footer
+
+The header menu includes `class="active"` for the current page.

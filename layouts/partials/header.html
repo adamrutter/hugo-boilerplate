@@ -1,1 +1,11 @@
 <h1>Header Placeholder</h1>
+<nav>
+  <ul>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.header }}
+      <li {{ if $currentPage.IsMenuCurrent "header" . }}class="active"{{ end }}>
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>
