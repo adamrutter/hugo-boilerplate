@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="/css/main.css">
     <title>{{ .Site.Title }} | {{ block "title" . }}{{ .Title }}{{ end }}</title>
   </head>
-  <body class="{{ urlize .Title }}">
+  <body>
+    <div class="container {{ urlize .Title }}">
+
       {{ block "body" . }}
       {{ end }}
+
+    </div>
   </body>
 </html>
