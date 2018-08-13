@@ -182,7 +182,7 @@ For example, to use a custom layout for `content/sub-directory/page-2.md`:
 1. Create your layout in `content/sub-directory/page-2.html`.
 2. Specify `layout: "page-2"` in the front matter of `page-2.md`.
 
-*__Note__: The content type must still match*
+*__Note__: The content type must still match.*
 
 ##### Top-level pages
 
