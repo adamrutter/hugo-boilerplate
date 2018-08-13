@@ -30,7 +30,7 @@
     "eslint:fix": "eslint src/**/*.js --fix",
     "lint:all": "npm run stylelint --silent; npm run eslint --silent",
     "svgo": "mkdir -p static/svg && svgo -f src/svg/ -o static/svg",
-    "svg-sprites": "mkdir -p static/svg && svg-sprite-generate -d static/svg -o static/svg/sprite.svg",
+    "svg-sprites": "svg-sprite-generate -d static/svg -o static/svg/sprite.svg",
     "scss": "node-sass --output-style compressed -o static/css src/scss",
     "autoprefixer": "postcss --no-map -u autoprefixer -r static/css/*",
     "clean:public": "rm -rf public",
