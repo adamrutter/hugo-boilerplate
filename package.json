@@ -47,7 +47,7 @@
     "watch:js": "onchange 'src/js/**'  -- npm run build:js",
     "watch:src": "parallelshell 'npm run watch:scss' 'npm run watch:js' 'npm run watch:svg'",
     "start:preview": "parallelshell 'hugo server --buildFuture --buildDrafts' 'npm run watch:src'",
-    "build:preview": "npm run clean:public && npm run build:css && npm run build:js && hugo --buildFuture --buildDrafts && npm run build:html",
+    "build:preview": "npm run clean:public && npm run build:css && npm run build:js && npm run build:svg && hugo --buildFuture --buildDrafts && npm run build:html",
     "build": "npm run clean:public && npm run build:css && npm run build:js && npm run build:svg && hugo && npm run build:html",
     "start": "parallelshell 'hugo server' 'npm run watch:src'"
   },
