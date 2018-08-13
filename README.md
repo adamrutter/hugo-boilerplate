@@ -92,7 +92,7 @@ Use this to lint your source code.
 2. Any files in `src/svg` are optimised using `svgo` and output to `static/svg`.
 3. All `.svg` files in `static/svg` are used to build a sprite at `static/svg/sprite.svg`.
 
-__Note__: *`src/svg` must have no further sub-directories or the build will fail due to errors from `svgo`*
+*__Note__: `src/svg` must have no further sub-directories or the build will fail due to errors from `svgo`*
 
 ### HTML
 1. `hugo` generates the `.html` files.
