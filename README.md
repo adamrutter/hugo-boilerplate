@@ -1,12 +1,17 @@
 # Hugo Boilerplate
 
-The boilerplate I use for creating [Hugo](gohugo.io "Hugo") projects. It uses:
+The boilerplate I use for creating [Hugo](gohugo.io "Hugo") projects. It compiles Sass, transpiles JavaScript, creates SVG sprites and adds some other extras.
+
+It uses:
+
 * [Sass](sass-lang.com "Sass")
 * [Normalize](necolas.github.io/normalize.css "Normalize")
 * [PostCSS](postcss.org "PostCSS")
 * [Babel](babeljs.io "Babel")
 * [stylelint](stylelint.io "stylelint")
 * [ESLint](eslint.org "ESLint")
+* [svgo](github.com/svg/svgo "svgo")
+* [svg-sprite-generator](github.com/frexy/svg-sprite-generator "svg-sprite-generator")
 * [npm scripts](docs.npmjs.com/misc/scripts "npm scripts")
 
 ## Installation
@@ -26,6 +31,7 @@ Use this for development. Changes made to any files will be immediately reflecte
 1. Starts the Hugo live server.
 2. Compiles/minifies Sass to `static/css` upon changes in `src/scss`.
 3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
+4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
 
 ### `npm run build`
 
@@ -46,7 +52,8 @@ Similar to `npm start`. Use this when you want the live server to include drafts
 
 1. Starts the Hugo live server with the flags `--buildFuture --buildDrafts`.
 2. Compiles/minifies Sass to `static/css` upon changes in `src/scss`.
-3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.|
+3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
+4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
 
 ### `npm run build:preview`
 
@@ -72,13 +79,20 @@ Use this to lint your source code.
 
 ### Sass
 1. `static/css` is cleaned.
-2. All `.scss` files are compiled to `.css` using `node-sass`, compressed and outputted to `static/css`.
+2. All `.scss` files are compiled to `.css` using `node-sass`, compressed and output to `static/css`.
 3. The compiled `.css` files are run through `postcss -u autoprefixer` with source maps disabled.
 
 ### JavaScript
 1. `static/js` is cleaned.
 2. All `.js` are transpiled to ES5 and piped to `uglify-js`.
 3. `uglify-js` minifies and mangles the code, and outputs to `static/js/main.js`.
+
+### SVG
+1. `static/svg` is cleaned.
+2. Any files in `src/svg` are optimised using `svgo` and output to `static/svg`.
+3. All `.svg` files in `static/svg` are used to build a sprite at `static/svg/sprite.svg`.
+
+__Note__: *`src/svg` must have no further sub-directories or the build will fail due to errors from `svgo`*
 
 ### HTML
 1. `hugo` generates the `.html` files.
@@ -125,17 +139,19 @@ Use this to lint your source code.
 │       └── single.html        - Single page template for sub-directory
 │
 ├── src                        - For source code
-│
+│   │
 │   ├── js                     - For JavaScript source code
 │   │   └── main.js            - Main JavaScript file
 │   │
-│   └── scss                   - For Sass source code
-│       ├── main.scss          - The main .scss file; imports normalize
-│       │
-│       ├── layouts            - For layouts; grids etc
-│       ├── pages              - For page specific CSS
-│       ├── variables          - For Sass variables
-│       └── components         - For components; header, footer etc
+│   ├── scss                   - For Sass source code
+│   │   ├── main.scss          - The main .scss file; imports normalize
+│   │   │
+│   │   ├── layouts            - For layouts; grids etc
+│   │   ├── pages              - For page specific CSS
+│   │   ├── variables          - For Sass variables
+│   │   └── components         - For components; header, footer etc
+│   │
+│   └── svg                    - For SVG files
 │
 └── static                     - For static assets; images etc.
 ```
