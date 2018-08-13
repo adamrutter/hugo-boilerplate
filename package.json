@@ -33,7 +33,7 @@
     "svg-sprites": "svg-sprite-generate -d static/svg -o static/svg/sprite.svg",
     "scss": "node-sass --output-style compressed -o static/css src/scss",
     "autoprefixer": "postcss --no-map -u autoprefixer -r static/css/*",
-    "clean:public": "rm -rf public",
+    "clean:public": "rm -rf public/",
     "clean:svg": "rm -rf static/svg/",
     "clean:css": "rm -rf static/css/",
     "clean:js": "rm -rf static/js/",
