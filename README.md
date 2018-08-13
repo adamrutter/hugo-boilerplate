@@ -88,8 +88,8 @@ Use this to lint your source code.
 3. `uglify-js` minifies and mangles the code, and outputs to `static/js/main.js`.
 
 ### SVG
-1. Any files in `src/svg` are optimised using `svgo` and output to `static/svg`.
-2. `static/svg/sprite.svg` is cleaned.
+1. `static/svg` is cleaned.
+2. Any files in `src/svg` are optimised using `svgo` and output to `static/svg`.
 3. All `.svg` files in `static/svg` are used to build a sprite at `static/svg/sprite.svg`.
 
 __Note__: *`src/svg` must have no further sub-directories or the build will fail due to errors from `svgo`*
