@@ -31,7 +31,7 @@
     "svgo": "mkdir -p static/svg && svgo -f src/svg/ -o static/svg",
     "svg-sprites": "svg-sprite-generate -d static/svg -o static/svg/sprite.svg",
     "scss": "node-sass --output-style compressed -o static/css src/scss",
-    "autoprefixer": "postcss --no-map -u autoprefixer -r static/css/*",
+    "postcss": "postcss --no-map -u autoprefixer -r static/css/*",
 
     "lint:all": "npm run stylelint --silent; npm run eslint --silent",
 
@@ -43,7 +43,7 @@
 
     "build:svg": "npm run clean:svg && npm run svgo && npm run svg-sprites",
     "build:html": "html-minifier --input-dir ./public --output-dir ./public --collapse-whitespace --file-ext html",
-    "build:css": "npm run clean:css && npm run scss && npm run autoprefixer",
+    "build:css": "npm run clean:css && npm run scss && npm run postcss",
     "build:js": "npm run clean:js && mkdir -p static/js && ./node_modules/.bin/babel src/js/ | uglifyjs -m -o static/js/main.js",
 
     "watch:svg": "onchange 'src/svg/**' -- npm run build:svg",
