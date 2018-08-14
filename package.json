@@ -33,6 +33,9 @@
     "sass:build": "node-sass --output-style compressed src/scss/main.scss static/css/main.css",
     "sass:watch": "node-sass -w --output-style compressed src/scss/main.scss static/css/main.css",
     "postcss:autoprefixer": "postcss static/css/main.css --no-map -u autoprefixer -o static/css/main.css",
+    "babel": "./node_modules/.bin/babel src/js/",
+    "uglifyjs": "uglifyjs -m -o static/js/main.js",
+    "js": "mkdir -p static/js && npm run babel -s | npm run uglifyjs",
 
     "lint:all": "npm run stylelint --silent; npm run eslint --silent",
 
@@ -45,11 +48,11 @@
     "build:svg": "npm run clean:svg && npm run svgo && npm run svg-sprites",
     "build:html": "html-minifier --input-dir ./public --output-dir ./public --collapse-whitespace --file-ext html",
     "build:css": "npm run clean:css && npm run sass:build && npm run postcss:autoprefixer",
-    "build:js": "npm run clean:js && mkdir -p static/js && ./node_modules/.bin/babel src/js/ | uglifyjs -m -o static/js/main.js",
+    "build:js": "npm run clean:js && npm run js",
 
     "watch:svg": "onchange 'src/svg/**' -- npm run build:svg",
     "watch:scss": "npm run sass:watch",
-    "watch:js": "onchange 'src/js/**'  -- npm run build:js",
+    "watch:js": "onchange 'src/js/**'  -- npm run js",
     "watch:src": "parallelshell 'npm run watch:scss' 'npm run watch:js' 'npm run watch:svg'",
 
     "build:preview": "npm run clean:public && npm run build:css && npm run build:js && npm run build:svg && hugo --buildFuture --buildDrafts && npm run build:html",
