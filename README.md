@@ -29,7 +29,7 @@ Use this for development. Changes made to any files will be immediately reflecte
 ##### What it does:
 
 1. Starts the Hugo live server.
-2. Compiles/minifies Sass to `static/css` upon changes in `src/scss`.
+2. Compiles/minifies Sass to `static/css/main.css` upon changes in `src/scss/main.scss`.
 3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
 
@@ -51,7 +51,7 @@ Similar to `npm start`. Use this when you want the live server to include drafts
 ##### What it does:
 
 1. Starts the Hugo live server with the flags `--buildFuture --buildDrafts`.
-2. Compiles/minifies Sass to `static/css` upon changes in `src/scss`.
+2. Compiles/minifies Sass to `static/css/main.css` upon changes in `src/scss/main.scss`.
 3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
 
@@ -79,8 +79,8 @@ Use this to lint your source code.
 
 ### Sass
 1. `static/css` is cleaned.
-2. All `.scss` files are compiled to `.css` using `node-sass`, compressed and output to `static/css`.
-3. The compiled `.css` files are run through `postcss -u autoprefixer` with source maps disabled.
+2. `main.scss` is compiled using `node-sass`, compressed and output to `static/css/main.css`.
+3. The compiled `main.css` is run through `postcss -u autoprefixer` with source maps disabled.
 
 ### JavaScript
 1. `static/js` is cleaned.

@@ -30,8 +30,9 @@
     "eslint:fix": "eslint src/**/*.js --fix",
     "svgo": "mkdir -p static/svg && svgo -f src/svg/ -o static/svg",
     "svg-sprites": "svg-sprite-generate -d static/svg -o static/svg/sprite.svg",
-    "scss": "node-sass --output-style compressed -o static/css src/scss",
-    "postcss": "postcss --no-map -u autoprefixer -r static/css/*",
+    "sass:build": "node-sass --output-style compressed src/scss/main.scss static/css/main.css",
+    "sass:watch": "node-sass -w --output-style compressed src/scss/main.scss static/css/main.css",
+    "postcss:autoprefixer": "postcss static/css/main.css --no-map -u autoprefixer -o static/css/main.css",
 
     "lint:all": "npm run stylelint --silent; npm run eslint --silent",
 
@@ -43,11 +44,11 @@
 
     "build:svg": "npm run clean:svg && npm run svgo && npm run svg-sprites",
     "build:html": "html-minifier --input-dir ./public --output-dir ./public --collapse-whitespace --file-ext html",
-    "build:css": "npm run clean:css && npm run scss && npm run postcss",
+    "build:css": "npm run clean:css && npm run sass:build && npm run postcss:autoprefixer",
     "build:js": "npm run clean:js && mkdir -p static/js && ./node_modules/.bin/babel src/js/ | uglifyjs -m -o static/js/main.js",
 
     "watch:svg": "onchange 'src/svg/**' -- npm run build:svg",
-    "watch:scss": "onchange 'src/scss/**' -- npm run build:css",
+    "watch:scss": "npm run sass:watch",
     "watch:js": "onchange 'src/js/**'  -- npm run build:js",
     "watch:src": "parallelshell 'npm run watch:scss' 'npm run watch:js' 'npm run watch:svg'",
 
