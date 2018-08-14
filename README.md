@@ -29,8 +29,8 @@ Use this for development. Changes made to any files will be immediately reflecte
 ##### What it does:
 
 1. Starts the Hugo live server.
-2. Compiles/minifies Sass to `static/css/main.css` upon changes in `src/scss/main.scss`.
-3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
+2. Compiles/minifies Sass to `static/css/main.css` upon any changes in `src/scss`. Also generates source maps.
+3. Transpiles JavaScript to `static/js` upon changes in `src/js`. Also generates source maps.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
 
 ### `npm run build`
@@ -51,8 +51,8 @@ Similar to `npm start`. Use this when you want the live server to include drafts
 ##### What it does:
 
 1. Starts the Hugo live server with the flags `--buildFuture --buildDrafts`.
-2. Compiles/minifies Sass to `static/css/main.css` upon changes in `src/scss/main.scss`.
-3. Transpiles/minifies JavaScript to `static/js` upon changes in `src/js`.
+2. Compiles/minifies Sass to `static/css/main.css` upon any changes in `src/scss`. Also generates source maps.
+3. Transpiles JavaScript to `static/js` upon changes in `src/js`. Also generates source maps.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
 
 ### `npm run build:preview`
@@ -222,3 +222,7 @@ Two menus are included:
 * Footer
 
 The header menu includes `class="active"` for the current page.
+
+### Source Maps
+
+To make source mapping work properly in Chrome, you need to create a workspace; add the project root directory to `Settings > Workspace` in Chrome's Developer Tools.
