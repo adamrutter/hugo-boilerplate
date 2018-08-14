@@ -154,6 +154,10 @@ Use this to lint your source code.
 │   └── svg                    - For SVG files
 │
 └── static                     - For static assets; images etc.
+    │
+    ├── js                     - For transpiled JavaScript
+    ├── css                    - For compiled CSS
+    └── svg                    - For optimised SVGs and sprites
 ```
 
 ## Other information
