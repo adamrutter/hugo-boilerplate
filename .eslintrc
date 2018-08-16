@@ -2,5 +2,12 @@
   "extends": "eslint-config-google",
   "parserOptions": {
    "ecmaVersion": 6
+  },
+  "plugins": ["compat"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "compat/compat": "error"
   }
 }
