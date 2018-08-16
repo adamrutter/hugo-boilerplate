@@ -9,10 +9,13 @@ It uses:
 * [PostCSS](postcss.org "PostCSS")
 * [Babel](babeljs.io "Babel")
 * [stylelint](stylelint.io "stylelint")
+* [stylelint-no-unsupported-browser-features](github.com/ismay/stylelint-no-unsupported-browser-features "stylelint-no-unsupported-browser-features")
 * [ESLint](eslint.org "ESLint")
+* [eslint-plugin-compat](github.com/amilajack/eslint-plugin-compat "eslint-plugin-compat")
 * [svgo](github.com/svg/svgo "svgo")
 * [svg-sprite-generator](github.com/frexy/svg-sprite-generator "svg-sprite-generator")
 * [npm scripts](docs.npmjs.com/misc/scripts "npm scripts")
+* [browserslist](github.com/browserslist/browserslist "browserslist")
 
 ## Installation
 
@@ -68,7 +71,7 @@ Similar to `npm run build`. Use this to include drafts and future content in you
 
 ### `npm run lint:all`
 
-Use this to lint your source code.
+Use this to lint your source code. It includes plugins to lint code against target browsers, using browserslist.
 
 ##### What it does:
 
