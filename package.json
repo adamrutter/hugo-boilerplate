@@ -7,9 +7,11 @@
     "normalize.css": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
     "autoprefixer": "^9.0.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "browserslist": "^4.0.2",
     "eslint": "^5.2.0",
     "eslint-config-google": "^0.9.1",
     "html-minifier": "^3.5.19",
@@ -37,28 +39,22 @@
     "babel:watch": "./node_modules/.bin/babel src/js/ --watch --source-maps --out-file static/js/main.js",
     "uglifyjs": "uglifyjs -m -o static/js/main.js",
     "js": "npm run babel:build -s | npm run uglifyjs",
-
     "lint:all": "npm run stylelint --silent; npm run eslint --silent",
-
     "clean:public": "rm -rf public/",
     "clean:svg": "rm -rf static/svg/*.svg",
     "clean:css": "rm -rf static/css/*.css",
     "clean:js": "rm -rf static/js/*.js",
     "clean:all": "npm run clean:public && npm run clean:css && npm run clean:js",
-
     "build:svg": "npm run clean:svg && npm run svgo && npm run svg-sprites",
     "build:html": "html-minifier --input-dir ./public --output-dir ./public --collapse-whitespace --file-ext html",
     "build:css": "npm run clean:css && npm run sass:build && npm run postcss:autoprefixer",
     "build:js": "npm run clean:js && npm run js",
-
     "watch:svg": "onchange 'src/svg/**' -- npm run build:svg",
     "watch:scss": "npm run sass:watch",
     "watch:js": "npm run babel:watch",
     "watch:src": "parallelshell 'npm run watch:scss' 'npm run watch:js' 'npm run watch:svg'",
-
     "build:preview": "npm run clean:public && npm run build:css && npm run build:js && npm run build:svg && hugo --buildFuture --buildDrafts && npm run build:html",
     "start:preview": "parallelshell 'hugo server --buildFuture --buildDrafts' 'npm run watch:src'",
-
     "build": "npm run clean:public && npm run build:css && npm run build:js && npm run build:svg && hugo && npm run build:html",
     "start": "parallelshell 'hugo server' 'npm run watch:src'"
   },
