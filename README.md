@@ -1,6 +1,6 @@
 # Hugo Boilerplate
 
-The boilerplate I use for creating [Hugo](gohugo.io "Hugo") projects. It compiles Sass, transpiles JavaScript, creates SVG sprites and adds some other extras.
+The boilerplate I use for creating [Hugo](gohugo.io "Hugo") projects. It compiles Sass, transpiles JavaScript, optimises images, creates SVG sprites and adds some other extras.
 
 It uses:
 
@@ -16,6 +16,9 @@ It uses:
 * [svg-sprite-generator](github.com/frexy/svg-sprite-generator "svg-sprite-generator")
 * [npm scripts](docs.npmjs.com/misc/scripts "npm scripts")
 * [browserslist](github.com/browserslist/browserslist "browserslist")
+* [imagemin](github.com/imagemin/imagemin "imagemin")
+* [imagemin-pngquant](github.com/imagemin/imagemin-mozjpeg "imagemin-pngqunat")
+* [imagemin-mozjpeg](github.com/imagemin/imagemin-pngquant "imagemin-mozjpeg")
 
 ## Installation
 
@@ -35,6 +38,7 @@ Use this for development. Changes made to any files will be immediately reflecte
 2. Compiles/minifies Sass to `static/css/main.css` upon any changes in `src/scss`. Also generates source maps.
 3. Transpiles JavaScript to `static/js` upon changes in `src/js`. Also generates source maps.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
+5. Optimises images recursively to `static/img`. Directory structure is maintained. Changes to directories (eg, copying a directory of images) are not reflected in `static/img` This is because only the directory is detected as having changed.
 
 ### `npm run build`
 
@@ -57,6 +61,7 @@ Similar to `npm start`. Use this when you want the live server to include drafts
 2. Compiles/minifies Sass to `static/css/main.css` upon any changes in `src/scss`. Also generates source maps.
 3. Transpiles JavaScript to `static/js` upon changes in `src/js`. Also generates source maps.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
+5. Optimises images recursively to `static/img`. Directory structure is maintained. Changes to directories (eg, copying a directory of images) are not reflected in `static/img` This is because only the directory is detected as having changed.
 
 ### `npm run build:preview`
 
@@ -96,6 +101,12 @@ Use this to lint your source code. It includes plugins to lint code against targ
 3. All `.svg` files in `static/svg` are used to build a sprite at `static/svg/sprite.svg`.
 
 *__Note__: `src/svg` must have no further sub-directories or the build will fail due to errors from `svgo`. The build will also fail if there are no `.svg` files in `src/svg`.*
+
+### Images
+1. `static/img` is cleaned.
+2. All images in `src/img` are optimised using `imagemin`, using the plugins `imagemin-pngquant` and `imagemin-mozjpeg`, and output to `static/img`.
+
+*__Note__: This is recursive and the directory structure in `src/img` will be maintained in `static/img`.*
 
 ### HTML
 1. `hugo` generates the `.html` files.
@@ -143,6 +154,8 @@ Use this to lint your source code. It includes plugins to lint code against targ
 │
 ├── src                        - For source code
 │   │
+│   ├── img                    - For images
+│   │
 │   ├── js                     - For JavaScript source code
 │   │   └── main.js            - Main JavaScript file
 │   │
@@ -158,6 +171,7 @@ Use this to lint your source code. It includes plugins to lint code against targ
 │
 └── static                     - For static assets; images etc.
     │
+    ├── img                    - For optimised images
     ├── js                     - For transpiled JavaScript
     ├── css                    - For compiled CSS
     └── svg                    - For optimised SVGs and sprites
@@ -233,3 +247,12 @@ The header menu includes `class="active"` for the current page.
 ### Source Maps
 
 To make source mapping work properly in Chrome, you need to create a workspace; add the project root directory to `Settings > Workspace` in Chrome's Developer Tools.
+
+### Image Optimisation
+
+Configuration for image optimisation can be done in `imagemin.js`. 
+
+Quality can be adjusted using the variables under the __Image quality__ heading.
+
+* `png` quality is a string comprising a range of quality `'50-75'`.
+* `jpg` quality is an integer `75`.
