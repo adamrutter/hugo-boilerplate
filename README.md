@@ -248,6 +248,10 @@ The header menu includes `class="active"` for the current page.
 
 To make source mapping work properly in Chrome, you need to create a workspace; add the project root directory to `Settings > Workspace` in Chrome's Developer Tools.
 
+### Browser Support
+
+The browsers the project supports can be defined in `.browserslistrc`. This effects `autoprefixer`, `babel`, `eslint-plugin-compat` and `stylelint-no-unsupported-browser-features`.
+
 ### Image Optimisation
 
 Configuration for image optimisation can be done in `imagemin.js`. 
