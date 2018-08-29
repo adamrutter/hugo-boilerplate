@@ -8,6 +8,7 @@
     "browser": true
   },
   "rules": {
-    "compat/compat": "warn"
+    "compat/compat": "warn",
+    "prefer-template": off
   }
 }
