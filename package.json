@@ -21,7 +21,7 @@
     "imagemin": "^6.0.0",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^6.0.0",
-    "node-sass": "^4.9.2",
+    "node-sass": "^4.11.0",
     "node-watch": "^0.5.8",
     "onchange": "^4.1.0",
     "parallelshell": "^3.0.2",
