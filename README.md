@@ -121,7 +121,6 @@ Use this to lint your source code. It includes plugins to lint code against targ
 ├── content                    - For storing content
 |   |
 │   ├── _index.md              - Main homepage .md file; use for front matter
-|   |
 │   ├── home                   - The homepage directory
 │   │   │
 │   │   └── sections           - For storing homepage content sections
@@ -129,7 +128,6 @@ Use this to lint your source code. It includes plugins to lint code against targ
 │   │       └── section-00.md  - A section of content
 |   |
 │   ├── page-1                 - The directory for page-1
-|   |
 │   ├── _index.md              - Main page-1 .md file
 │   │   │
 │   │   └── sections           - For storing page-1 content sections
@@ -148,9 +146,6 @@ Use this to lint your source code. It includes plugins to lint code against targ
 │   │   ├── baseof.html        - Containing everything up to the <body> tag
 │   │   ├── list.html          - Default list page
 │   │   └── single.html        - Default single page
-│   │
-│   ├── page                   - For top level page templates
-│   │   └── page-1.html        - A template example for page-1.md
 │   │
 │   ├── partials               - For partial templates
 │   │   ├── footer.html        - The footer
@@ -223,7 +218,7 @@ You could also set a custom `type`.
 Homepages (and others) often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:
 
 * A headless bundle `content/home/sections` for storing these sections.
-* A pre-written `.GetPage` method in the homepage template to fetch them.
+* A `.GetPage` method in the homepage template to fetch them.
 
 ##### How to use:
 
