@@ -1,5 +1,5 @@
 {{ define "body" }}
-{{ $section := (.Site.GetPage "/sections/home").Resources.Match "section*" }}
+{{ $section := (.Site.GetPage "/home/sections").Resources.Match "section*" }}
 
   <header>
     {{ partial "header.html" . }}
