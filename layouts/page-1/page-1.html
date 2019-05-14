@@ -1,0 +1,20 @@
+{{ define "body" }}
+{{ $section := (.Site.GetPage "/page-1/sections").Resources.Match "section*" }}
+
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+
+  <main>
+    <h2>Custom template for Page 1</h2>
+    <p>The layout needs to be specified in the front matter.</p>
+    <h3>{{ .Title }}</h3>
+    {{ .Content }}
+    <p>{{ (index $section 00).Content }}</p>
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+{{ end }}
