@@ -116,20 +116,25 @@ Use this to lint your source code. It includes plugins to lint code against targ
 
 ```
 ├── archetypes                 - For storing archetypes
-│   ├── default.md             - The default archetype
-│   └── sections.md            - An archetype for sections of content, see below
+│   └── default.md             - The default archetype
 │
 ├── content                    - For storing content
+|   |
 │   ├── _index.md              - Main homepage .md file; use for front matter
-│   ├── page-1.md              - A default page
-│   │
-│   ├── sections               - The content sections directory
+│   ├── home                   - The homepage directory
 │   │   │
-│   │   └── home               - For storing homepage content sections
+│   │   └── sections           - For storing homepage content sections
+│   │       ├── index.md       - Signifies the headless bundle
+│   │       └── section-00.md  - A section of content
+|   |
+│   ├── page-1                 - The directory for page-1
+│   ├── _index.md              - Main page-1 .md file
+│   │   │
+│   │   └── sections           - For storing page-1 content sections
 │   │       ├── index.md       - Signifies the headless bundle
 │   │       └── section-00.md  - A section of content
 │   │
-│   └── sub-directory          - A sub-directory
+│   └── sub-directory          - A sub-directory, for related pages
 │       ├── _index.html        - Front matter/content for the directory list page
 │       └── page-2.md          - A default page
 │
@@ -141,9 +146,6 @@ Use this to lint your source code. It includes plugins to lint code against targ
 │   │   ├── baseof.html        - Containing everything up to the <body> tag
 │   │   ├── list.html          - Default list page
 │   │   └── single.html        - Default single page
-│   │
-│   ├── page                   - For top level page templates
-│   │   └── page-1.html        - A template example for page-1.md
 │   │
 │   ├── partials               - For partial templates
 │   │   ├── footer.html        - The footer
@@ -213,27 +215,26 @@ You could also set a custom `type`.
 
 ### Multiple content sections
 
-Homepages often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:
+Homepages (and others) often use multiple sections of content and the boilerplate attempts to provide an "out-of-the-box" solution to this. It provides:
 
-* A headless bundle `content/sections/home` for storing these sections.
-* A pre-written `.GetPage` method in the homepage template to fetch them.
-* A custom archetype.
+* A headless bundle `content/home/sections` for storing these sections.
+* A `.GetPage` method in the homepage template to fetch them.
 
 ##### How to use:
 
-1. Create a section with `hugo new sections/home/section-nn.md` (where `nn` is the zero-indexed number of the section).
+1. Create a new section at `home/sections/section-nn.md` (where `nn` is the zero-indexed number of the section).
 2. Reference these sections in the homepage template using `{{ (index $section nn).Content }}`.
 
-*__Note__: the front matter of these sections must only contain `title` to ensure correct sorting; hence the custom archetype.*
+*__Note__: the front matter of these sections should only contain `title: "Section nn"` to ensure correct sorting.*
 
 ##### This system can be extended to other pages too:
 
-1. Create another headless bundle `content/sections/my-page`.
-2. Include `{{ $section := (.Site.GetPage "/sections/my-page").Resources.Match "section*" }}` in the page's template.
-3. `hugo new /sections/my-page/section-nn.md`.
+1. Create another headless bundle `content/my-page/sections`.
+2. Include `{{ $section := (.Site.GetPage "/my-page/sections").Resources.Match "section*" }}` in the page's template.
+3. Create your content section at `/my-page/sections/section-nn.md`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
 
-Again, the front matter should only contain a title; using `hugo new` ensures this.
+Again, the front matter should only contain a title.
 
 ### Menus
 
@@ -254,7 +255,7 @@ The browsers the project supports can be defined in `.browserslistrc`. This effe
 
 ### Image Optimisation
 
-Configuration for image optimisation can be done in `imagemin.js`. 
+Configuration for image optimisation can be done in `imagemin.js`.
 
 Quality can be adjusted using the variables under the __Image quality__ heading.
 
