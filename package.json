@@ -24,7 +24,7 @@
     "node-sass": "^4.12.0",
     "node-watch": "^0.5.9",
     "onchange": "^4.1.0",
-    "parallelshell": "^3.0.2",
+    "parallelshell": "github:darkguy2008/parallelshell#8fd83e2",
     "postcss-cli": "^6.1.2",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.3.0",
