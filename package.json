@@ -74,7 +74,7 @@
     "build:preview": "npm run clean:public && npm run build:css && npm run build:js && npm run build:svg && hugo --buildFuture --buildDrafts && npm run build:html",
     "start:preview": "parallelshell 'hugo server --buildFuture --buildDrafts' 'npm run watch:src'",
     "build": "npm run clean:public && npm run build:css && npm run build:js && npm run build:img && npm run build:svg && hugo && npm run build:html",
-    "start": "parallelshell 'hugo server' 'npm run watch:src'"
+    "start": "parallelshell 'netlify dev' 'npm run watch:src'"
   },
   "author": "Adam Rutter",
   "license": "GPL-3.0",
