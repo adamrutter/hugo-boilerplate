@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-gb"
 title = "My New Hugo Website"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+enableRobotsTXT = "true"
 
 [blackfriday]
   hrefTargetBlank = true
