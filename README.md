@@ -9,6 +9,7 @@ It uses:
 * [PostCSS](postcss.org "PostCSS")
 * [Babel](babeljs.io "Babel")
 * [stylelint](stylelint.io "stylelint")
+* prettier
 * [stylelint-no-unsupported-browser-features](github.com/ismay/stylelint-no-unsupported-browser-features "stylelint-no-unsupported-browser-features")
 * [ESLint](eslint.org "ESLint")
 * [eslint-plugin-compat](github.com/amilajack/eslint-plugin-compat "eslint-plugin-compat")
