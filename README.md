@@ -224,12 +224,12 @@ Homepages (and others) often use multiple sections of content and the boilerplat
 
 Content directories that are not supposed to be rendered (like these section directories) should have `draft: true` added to their `_index` front matter, otherwise blank pages will be rendered.
 
+Ordering of sections can be achieved using the `weight` variable in the section's front matter.
+
 ##### How to use:
 
-1. Create a new section at `home/sections/section-nn.md` (where `nn` is the zero-indexed number of the section).
+1. Create a new section at `home/sections/section-nn.md`.
 2. Reference these sections in the homepage template using `{{ (index $section nn).Content }}`.
-
-*__Note__: the front matter of these sections should only contain `title: "Section nn"` to ensure correct sorting.*
 
 ##### This system can be extended to other pages too:
 
@@ -237,8 +237,6 @@ Content directories that are not supposed to be rendered (like these section dir
 2. Include `{{ $section := (.Site.GetPage "/my-page/sections").Resources.Match "*.md" }}` in the page's template.
 3. Create your content section at `/my-page/sections/section-nn.md`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
-
-Again, the front matter should only contain a title.
 
 ### Menus
 
