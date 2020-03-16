@@ -233,7 +233,7 @@ Content directories that are not supposed to be rendered (like these section dir
 ##### This system can be extended to other pages too:
 
 1. Create another headless bundle `content/my-page/sections`.
-2. Include `{{ $section := (.Site.GetPage "/my-page/sections").Resources.Match "section*" }}` in the page's template.
+2. Include `{{ $section := (.Site.GetPage "/my-page/sections").Resources.Match "*.md" }}` in the page's template.
 3. Create your content section at `/my-page/sections/section-nn.md`.
 4. Reference the sections with `{{ (index $section nn).Content }}`.
 
