@@ -4,22 +4,22 @@ The boilerplate I use for creating [Hugo](gohugo.io "Hugo") projects. It compile
 
 It uses:
 
-* [Sass](sass-lang.com "Sass")
-* [Normalize](necolas.github.io/normalize.css "Normalize")
-* [PostCSS](postcss.org "PostCSS")
-* [Babel](babeljs.io "Babel")
-* [stylelint](stylelint.io "stylelint")
-* prettier
-* [stylelint-no-unsupported-browser-features](github.com/ismay/stylelint-no-unsupported-browser-features "stylelint-no-unsupported-browser-features")
-* [ESLint](eslint.org "ESLint")
-* [eslint-plugin-compat](github.com/amilajack/eslint-plugin-compat "eslint-plugin-compat")
-* [svgo](github.com/svg/svgo "svgo")
-* [svg-sprite-generator](github.com/frexy/svg-sprite-generator "svg-sprite-generator")
-* [npm scripts](docs.npmjs.com/misc/scripts "npm scripts")
-* [browserslist](github.com/browserslist/browserslist "browserslist")
-* [imagemin](github.com/imagemin/imagemin "imagemin")
-* [imagemin-pngquant](github.com/imagemin/imagemin-mozjpeg "imagemin-pngqunat")
-* [imagemin-mozjpeg](github.com/imagemin/imagemin-pngquant "imagemin-mozjpeg")
+* [Sass](https://sass-lang.com "Sass")
+* [Normalize](https://necolas.github.io/normalize.css "Normalize")
+* [PostCSS](https://postcss.org "PostCSS")
+* [Babel](https://babeljs.io "Babel")
+* [stylelint](https://stylelint.io "stylelint")
+* [prettier](https://prettier.io/)
+* [stylelint-no-unsupported-browser-features](https://github.com/ismay/stylelint-no-unsupported-browser-features "stylelint-no-unsupported-browser-features")
+* [ESLint](https://eslint.org "ESLint")
+* [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat "eslint-plugin-compat")
+* [svgo](https://github.com/svg/svgo "svgo")
+* [svg-sprite-generator](https://github.com/frexy/svg-sprite-generator "svg-sprite-generator")
+* [npm scripts](https://docs.npmjs.com/misc/scripts "npm scripts")
+* [browserslist](https://github.com/browserslist/browserslist "browserslist")
+* [imagemin](https://github.com/imagemin/imagemin "imagemin")
+* [imagemin-pngquant](https://github.com/imagemin/imagemin-mozjpeg "imagemin-pngqunat")
+* [imagemin-mozjpeg](https://github.com/imagemin/imagemin-pngquant "imagemin-mozjpeg")
 
 ## Installation
 
