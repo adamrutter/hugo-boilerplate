@@ -10,6 +10,7 @@
     {{ if or (.Params.robotsdisallow) (eq .Kind "404") }}<meta name="robots" content="noindex, nofollow, noarchive">
       {{ else }}<meta name="robots" content="index, follow, archive">
     {{ end }}
+    <script src="/js/main.js" defer></script>
   </head>
   <body class="{{ urlize .Title }}">
     {{ block "body" . }}
