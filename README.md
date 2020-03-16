@@ -221,6 +221,8 @@ Homepages (and others) often use multiple sections of content and the boilerplat
 * A headless bundle `content/home/sections` for storing these sections.
 * A `.GetPage` method in the homepage template to fetch them.
 
+Content directories that are not supposed to be rendered (like these section directories) should have `draft: true` added to their `_index` front matter, otherwise blank pages will be rendered.
+
 ##### How to use:
 
 1. Create a new section at `home/sections/section-nn.md` (where `nn` is the zero-indexed number of the section).
