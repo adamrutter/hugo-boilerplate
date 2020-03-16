@@ -1,3 +1,7 @@
 node_modules
 public
 resources
+static/css
+static/js
+static/img
+static/svg
