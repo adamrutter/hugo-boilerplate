@@ -20,6 +20,7 @@ It uses:
 * [imagemin](https://github.com/imagemin/imagemin "imagemin")
 * [imagemin-pngquant](https://github.com/imagemin/imagemin-mozjpeg "imagemin-pngqunat")
 * [imagemin-mozjpeg](https://github.com/imagemin/imagemin-pngquant "imagemin-mozjpeg")
+* [netlify cli](https://github.com/netlify/cli "netlify cli")
 
 ## Installation
 
@@ -32,11 +33,11 @@ It uses:
 
 ### `npm start`
 
-Use this for development. Changes made to any files will be immediately reflected on [http://localhost:1313](http://localhost:1313).
+Use this for development. Changes made to any files will be immediately reflected on [http://localhost:1313](http://localhost:8888).
 
 ##### What it does:
 
-1. Starts the Hugo live server.
+1. Starts the Hugo live server (through `netlify dev`).
 2. Compiles/minifies Sass to `static/css/main.css` upon any changes in `src/scss`. Also generates source maps.
 3. Transpiles JavaScript to `static/js` upon changes in `src/js`. Also generates source maps.
 4. Optimises SVG to `static/svg` and builds a sprite at `static/svg/sprite.svg` upon changes in `src/svg`.
@@ -139,6 +140,8 @@ Use this to lint your source code. It includes plugins to lint code against targ
 │   └── sub-directory          - A sub-directory, for related pages
 │       ├── _index.html        - Front matter/content for the directory list page
 │       └── page-2.md          - A default page
+│
+├── functions                  - For netlify functions
 │
 ├── layouts                    - For layouts
 │   ├── 404.html               - 404 template
