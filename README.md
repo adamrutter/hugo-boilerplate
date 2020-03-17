@@ -24,7 +24,7 @@ It uses:
 
 ## Installation
 
-1. `git clone https://gitlab.com/adamrutter/hugo-boilerplate.git`
+1. `git clone https://github.com/adamrutter/hugo-boilerplate.git`
 2. `cd hugo-boilerplate`
 3. `npm install`
 4. `hugo`
