@@ -214,7 +214,7 @@ For example, to use a custom layout for `content/sub-directory/page-2.md`:
 
 ##### Top-level pages
 
-As pages at the top-level of the `content` directory (eg. `content/page-1.md`) have a `type` of `pages`, their layouts go in `layouts/pages`.
+As pages at the top-level of the `content` directory (eg. `content/page-1.md`) have a `type` of `page`, their layouts go in `layouts/page`.
 
 You could also set a custom `type`.
 
